@@ -4,9 +4,16 @@
   height: 100vh;
   width: 200px;
   overflow: hidden;
-  padding: 0.5rem;
+  padding: 1rem;
   box-sizing: border-box;
-  background-color: #1e1e2f;
+  background: rgba(31, 31, 47, 0.95); /* semi-transparent dark */
+  color: var(--color-foreground);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
 }
 
 .toggleButton {
@@ -14,8 +21,18 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.2rem;
-  color: #0070f3;
+  font-size: 1.3rem;
+  color: #00aaff; /* brighter accent */
+  font-weight: bold;
+  font-family: var(--font-sans);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.toggleButton:hover {
+  color: #00d0ff;
+  transform: scale(1.1);
 }
 
 .navContent {
@@ -23,6 +40,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 31, 47, 0.9);
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0 12px 12px 0;
+  padding: 0.5rem 1rem;
 }
 
 .navLinks {
@@ -32,13 +55,20 @@
 }
 
 .link {
-  color: #f0f0f0;
+  color: var(--color-foreground);
   text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 0;
-  transition: color 0.2s ease;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
 }
 
 .link:hover {
-  color: #6c63ff;
+  color: #00aaff;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding-left: 1.2rem; /* subtle slide effect */
+  box-shadow: inset 3px 0 0 #00aaff;
 }

@@ -1,65 +1,93 @@
 .authContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+  background: transparent;
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
   width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 0.5rem;
 }
 
+/* Message styling */
+.authContainer p {
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(0, 112, 243, 0.1);
+  color: var(--color-foreground);
+}
+
+/* Wrapper for the login form */
 .authForm {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  width: 100%;
 }
 
-.inputRow,
-.buttonRow {
+/* Inputs */
+.authForm input {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.authForm input:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+}
+
+/* Buttons row */
+.authForm div {
   display: flex;
+  justify-content: space-between;
   gap: 0.5rem;
-  flex-wrap: nowrap;
 }
 
-.formInput {
+/* Login/Register buttons */
+.authForm button {
   flex: 1;
-  min-width: 0;
-  padding: 0.4rem;
+  padding: 0.5rem;
   font-size: 0.9rem;
-  background-color: #2a2a3f;
-  color: #fff;
-  border: 1px solid #444;
-  border-radius: 4px;
-}
-
-.authButton {
-  flex: 1;
-  min-width: 0;
-  padding: 0.4rem;
-  font-size: 0.9rem;
-  background-color: #6c63ff;
-  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  background: #0070f3;
+  color: #fff;
   cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: background 0.2s ease;
+  font-family: var(--font-sans);
 }
 
-.authButton:hover {
-  background-color: #5750d4;
+.authForm button:hover {
+  background: #0059c1;
 }
 
-.authWelcome {
-  text-align: center;
+/* Logged-in state (Hello + Logout) */
+.authContainer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.authMessage {
-  font-size: 1rem;
-  color: #e0e0e0;
-  margin-bottom: 0.5rem;
+/* Logout button */
+.authContainer button {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: #ff4d4d;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: var(--font-sans);
 }
 
-.errorText {
-  color: #ff4d4d;
-  font-size: 0.8rem;
-  font-style: italic;
+.authContainer button:hover {
+  background: #cc0000;
 }

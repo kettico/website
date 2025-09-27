@@ -18,18 +18,7 @@ export default function Navbar({
         transition: 'width 0.3s ease',
       }}
     >
-      <button
-        onClick={toggle}
-        className={styles.toggleButton}
-        style={{
-          marginBottom: '2rem',
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          fontSize: '1.2rem',
-          color: '#0070f3',
-        }}
-      >
+      <button onClick={toggle} className={styles.toggleButton}>
         {collapsed ? '→' : '←'}
       </button>
       {!collapsed && (
